@@ -23,6 +23,15 @@ export class Group {
 	curso: Curso;
 }
 
+export class GroupRequest {
+	id: number;
+	nombre: string;
+	tema: string;
+	descripcion: string;
+	curso_id: number;
+	usuario_id: number;
+}
+
 export interface Chat {
 	id: number;
 	cant_mensajes: number;

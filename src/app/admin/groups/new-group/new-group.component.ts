@@ -12,4 +12,6 @@ export class NewGroupComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  create(group: any) {
+  }
 }

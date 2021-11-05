@@ -24,8 +24,7 @@ export class ListGroupComponent implements OnInit {
   }
 
   getAll(){
-    this.groupService.getAllPageable(0, 3).subscribe((data)=>{
-      console.log(data.content);
+    this.groupService.getAllPageable(0, 6).subscribe((data)=>{
       this.dataSource = new MatTableDataSource(data.content);
     });
   }

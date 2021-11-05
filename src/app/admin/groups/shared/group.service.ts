@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { Group } from './group.model';
+import { Group, GroupRequest } from './group.model';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +26,10 @@ export class GroupService {
 
   get(id:number){
     return this.http.get(`${this.apiBase}/books/${id}`);
+  }
+
+  create(groupReq: GroupRequest) {
+    return this.http.post(`${this.apiBase}/grupos`, groupReq);
   }
 
 }

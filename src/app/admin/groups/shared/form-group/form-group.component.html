@@ -1,1 +1,99 @@
-<p>form-group works!</p>
+<div class="row">
+	<div class="col-md-offset-3 mx-auto">
+	  <form
+		(ngSubmit)="save()"
+		autocomplete="off"
+		[formGroup]="form"
+		#frmGroup="ngForm"
+	  >
+		<mat-form-field appearance="outline" class="d-block">
+		  <mat-label>Nombre</mat-label>
+		  <input
+			matInput
+			type="text"
+			placeholder="Nombre"
+			formControlName="nombre"
+		  />
+  
+		  <mat-error *ngIf="form.controls.nombre.hasError('required')">
+			Este campo es obligatorio
+		  </mat-error>
+		  <mat-error *ngIf="form.controls.nombre.hasError('minlength')">
+			Debe tener al menos 5 caracteres
+		  </mat-error>
+		  <mat-error *ngIf="form.controls.nombre.hasError('maxlength')">
+			Debe tener 70 caracteres como máximo
+		  </mat-error>
+		</mat-form-field>
+
+		<mat-form-field appearance="outline" class="d-block">
+			<mat-label>Tema</mat-label>
+			<textarea matInput formControlName="tema" row="5"></textarea>
+	
+			<mat-error *ngIf="form.controls.tema.hasError('required')">
+			  Este campo es obligatorio
+			</mat-error>
+			<mat-error *ngIf="form.controls.tema.hasError('minlength')">
+			  Debe tener al menos 11 caracteres
+			</mat-error>
+			<mat-error *ngIf="form.controls.tema.hasError('maxlength')">
+			  Debe tener 255 caracteres como máximo
+			</mat-error>
+		  </mat-form-field>
+		
+		<mat-form-field appearance="outline" class="d-block">
+		  <mat-label>Descripción</mat-label>
+		  <textarea matInput formControlName="descripcion" row="5"></textarea>
+  
+		  <mat-error *ngIf="form.controls.descripcion.hasError('required')">
+			Este campo es obligatorio
+		  </mat-error>
+		  <mat-error *ngIf="form.controls.descripcion.hasError('minlength')">
+			Debe tener al menos 11 caracteres
+		  </mat-error>
+		  <mat-error *ngIf="form.controls.descripcion.hasError('maxlength')">
+			Debe tener 255 caracteres como máximo
+		  </mat-error>
+		</mat-form-field>
+  
+		<mat-form-field appearance="outline" class="d-block">
+		  <mat-label>ID de usuario</mat-label>
+		  <input
+			matInput
+			type="number"
+			placeholder="ID de usuario"
+			formControlName="usuario_id"
+		  />
+		  <mat-error *ngIf="form.controls.usuario_id.hasError('required')">
+			Este campo es obligatorio
+		  </mat-error>
+		</mat-form-field>
+
+		<mat-form-field appearance="outline" class="d-block">
+			<mat-label>ID de curso</mat-label>
+			<input
+			  matInput
+			  type="number"
+			  placeholder="ID de curso"
+			  formControlName="curso_id"
+			/>
+			<mat-error *ngIf="form.controls.curso_id.hasError('required')">
+			  Este campo es obligatorio
+			</mat-error>
+		  </mat-form-field>
+
+		<button mat-button routerLink="/admin/groups">Cancelar</button>
+  
+		<button
+		  mat-raised-button
+		  color="primary"
+		  type="submit"
+		  class="ms-2"
+		  [disabled]="frmGroup.invalid"
+		>
+		  Guardar
+		</button>
+	  </form>
+	</div>
+  </div>
+  
