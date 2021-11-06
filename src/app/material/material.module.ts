@@ -19,10 +19,13 @@ import {
   MatPaginatorIntl,
   MatPaginatorModule,
 } from '@angular/material/paginator';
-//import { MatPaginatorImpl } from './mat-paginator';
+import { MatPaginatorImpl } from './mat-paginator';
 
 @NgModule({
   declarations: [],
+  providers:[
+    {provide:MatPaginatorIntl, useClass:MatPaginatorImpl}
+  ],
   exports: [
     MatSidenavModule,
     MatToolbarModule,

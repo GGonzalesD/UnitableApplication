@@ -1,19 +1,13 @@
 <mat-toolbar>
 	<span>Unitable</span>
-	<button mat-button routerLink="/" class="ms-2">Inicio</button>
-	<button mat-button routerLink="/admin/groups" class="ms-2">Grupos</button>
 
-	<button mat-button [matMenuTriggerFor]="menu">
-		<mat-icon class="mat-18">account-circle</mat-icon>
-		Developer
+	<button mat-button routerLink="/" class="ms-2">Inicio</button>
+
+	<button mat-button routerLink="/auth/login" class="ms-2">
+		Iniciar sesión
 	</button>
 
-	<mat-menu #menu="matMenu">
-		<button mat-menu-item>
-			<mat-icon class="mat-18">logout</mat-icon>
-			Log Out
-		</button>
-	</mat-menu>
+	<span class="spacer"></span>
 
 </mat-toolbar>
 <router-outlet></router-outlet>

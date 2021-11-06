@@ -7,6 +7,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ServerErrorsInterceptor } from './interceptors/server-errors.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { UnauthorizedInterceptor } from './interceptors/unauthorized.interceptor';
 
 @NgModule({
   declarations: [
@@ -25,12 +27,12 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
       useClass: ServerErrorsInterceptor,
       multi: true,
     },
-    //{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-    /*{
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    {
       provide: HTTP_INTERCEPTORS,
       useClass: UnauthorizedInterceptor,
       multi: true,
-    },*/
+    },
   ],
   bootstrap: [AppComponent]
 })

@@ -1,7 +1,19 @@
 <mat-toolbar color="primary">
 	<span>Unitable</span>
-	<button mat-button routerLink="/" class="ms-2">Inicio</button>
 	<button mat-button routerLink="/admin/groups" class="ms-2">Groups</button>
+
+	<span class="spacer"></span>
+
+	<button mat-button [matMenuTriggerFor]="menu">
+		<mat-icon>account_circle</mat-icon> Develop
+	</button>
+
+	<mat-menu #menu="matMenu">
+		<button mat-menu-item (click)="signOut()">
+		<mat-icon>logout</mat-icon> Cerrar sesión
+		</button>
+	</mat-menu>
+
 </mat-toolbar>
 
 <router-outlet></router-outlet>
