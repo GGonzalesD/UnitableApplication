@@ -20,6 +20,8 @@ import {
   MatPaginatorModule,
 } from '@angular/material/paginator';
 import { MatPaginatorImpl } from './mat-paginator';
+import { MatOptionModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [],
@@ -35,6 +37,8 @@ import { MatPaginatorImpl } from './mat-paginator';
     MatInputModule,
     MatTableModule,
     MatPaginatorModule,
+    MatOptionModule,
+    MatSelectModule,
 
     MatTooltipModule,
     MatCardModule,
