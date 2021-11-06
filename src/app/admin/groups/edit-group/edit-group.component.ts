@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { GroupRequest } from '../shared/group.model';
+import { Group, GroupRequest } from '../shared/group.model';
 import { GroupService } from '../shared/group.service';
 
 @Component({
@@ -11,15 +11,12 @@ import { GroupService } from '../shared/group.service';
 export class EditGroupComponent implements OnInit {
 
   groupId!:number;
+  @Input () group!:any;
 
   constructor(private groupService:GroupService, private router:Router) { }
 
   ngOnInit(): void {
     this.groupId = Number.parseInt(this.router.url.split("/")[3]);
-    this.groupService.get(this.groupId).subscribe((data)=>{
-      console.log(data);
-      
-    });
   }
 
   edit(group: any) {
