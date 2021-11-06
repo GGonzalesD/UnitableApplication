@@ -25,11 +25,19 @@ export class GroupService {
   }
 
   get(id:number){
-    return this.http.get(`${this.apiBase}/books/${id}`);
+    return this.http.get(`${this.apiBase}/grupos/${id}`);
+  }
+
+  edit(id:number, groupReq: GroupRequest){
+    return this.http.put(`${this.apiBase}/grupos/${id}`, groupReq);
   }
 
   create(groupReq: GroupRequest) {
     return this.http.post(`${this.apiBase}/grupos`, groupReq);
+  }
+  
+  delete(id: number) {
+    return this.http.delete(`${this.apiBase}/grupos/${id}`);
   }
 
 }
