@@ -12,7 +12,7 @@ import { UserStorageService } from '../shared/user-storage.service';
 export class LoginComponent implements OnInit {
 
   public login: Login=new Login();
-  public invalid: boolean;
+  public invalid: boolean = true;
 
   constructor(
     private router:Router,
@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/admin/groups'])
     }, (error)=>{
       this.invalid = true;
-    })
+    });
   }
 
 }

@@ -38,13 +38,9 @@
 			</mat-error>
 		  </mat-form-field>
   
-		  <button mat-raised-button color="primary" class="mt-5 w-100">
+		  <button mat-raised-button color="primary" class="mt-5 w-100" [disabled]="loginForm.invalid">
 			Ingresar
 		  </button>
-  
-		  <div *ngIf="invalid" class="alert alert-danger mt-3">
-			El usuario o contraseña no son correctos.
-		  </div>
 		</form>
 	  </div>
 	</div>

@@ -11,6 +11,7 @@ import { Signup } from '../shared/signup.model';
 export class SignupComponent implements OnInit {
 
   public signup: Signup=new Signup();
+  public invalid: boolean = true;
   
   constructor(
     private router:Router,
@@ -23,8 +24,9 @@ export class SignupComponent implements OnInit {
   onSubmit(): void{
     this.authService.signUp(this.signup).subscribe((data:any)=>{
       this.router.navigate(['/auth/login'])
-    }
-    );
+    }, (error)=>{
+      this.invalid = true;
+    });
   }
 
 }
