@@ -24,6 +24,18 @@ export class GroupService {
     return this.http.get<Group[]>(`${this.apiBase}/grupos`)
   }
 
+  getCursosAuto(cursoAuto:string){
+    let params=new HttpParams();
+    params=params.append('search', cursoAuto);
+    return this.http.get<any[]>(`${this.apiBase}/cursos/auto`, {params});
+  }
+
+  getCursoByNombre(nombre:string){
+    let params=new HttpParams();
+    params=params.append('name', nombre);
+    return this.http.get<any[]>(`${this.apiBase}/cursos/byname`, {params});
+  }
+
   get(id:number){
     return this.http.get(`${this.apiBase}/grupos/${id}`);
   }

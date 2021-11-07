@@ -28,8 +28,8 @@ export class GroupRequest {
 	nombre: string;
 	tema: string;
 	descripcion: string;
-	curso_id: number;
-	usuario_id: number;
+	curso_n:string;
+	curso_d:string;
 }
 
 export interface Chat {

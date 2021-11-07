@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row ">
 	<div class="col-md-offset-3 mx-auto">
 	  <form
 		(ngSubmit)="save()"
@@ -56,29 +56,45 @@
 		  </mat-error>
 		</mat-form-field>
   
-		<mat-form-field appearance="outline" class="d-block">
-		  <mat-label>ID de usuario</mat-label>
-		  <input
-			matInput
-			type="number"
-			placeholder="ID de usuario"
-			formControlName="usuario_id"
-		  />
-		  <mat-error *ngIf="form.controls.usuario_id.hasError('required')">
-			Este campo es obligatorio
-		  </mat-error>
-		</mat-form-field>
 
-		<mat-form-field appearance="outline" class="d-block">
-			<mat-label>ID de curso</mat-label>
-			<input
-			  matInput
-			  type="number"
-			  placeholder="ID de curso"
-			  formControlName="curso_id"
-			/>
-			<mat-error *ngIf="form.controls.curso_id.hasError('required')">
+		  <mat-form-field  appearance="outline" class="d-block">
+			  <mat-label>Curso</mat-label>
+			  <input type="text"
+			 	placeholder="Curso"
+				matInput
+				formControlName="curso_n"
+				[formControl]="myControl"
+				[matAutocomplete]="auto"
+				(keyup)="reloadOptions($event)"
+			  >
+			  <mat-error *ngIf="form.controls.curso_n.hasError('required')">
+				Este campo es obligatorio
+			  </mat-error>
+			  <mat-autocomplete #auto="matAutocomplete">
+				  <mat-option *ngFor="let option of filteredOptions | async" [value]="option" (click)="clickOption(option)">
+					  {{option}}
+				  </mat-option>
+			  </mat-autocomplete>
+			  
+		  </mat-form-field>
+
+		  <mat-form-field appearance="outline" class="d-block">
+			<mat-label>Descripcion de curso</mat-label>
+			<textarea
+				matInput
+				formControlName="curso_d"
+				row="5"
+				>
+			</textarea>
+	
+			<mat-error *ngIf="form.controls.curso_d.hasError('required')">
 			  Este campo es obligatorio
+			</mat-error>
+			<mat-error *ngIf="form.controls.curso_d.hasError('minlength')">
+			  Debe tener al menos 11 caracteres
+			</mat-error>
+			<mat-error *ngIf="form.controls.curso_d.hasError('maxlength')">
+			  Debe tener 255 caracteres como máximo
 			</mat-error>
 		  </mat-form-field>
 

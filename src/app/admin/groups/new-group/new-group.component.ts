@@ -15,15 +15,8 @@ export class NewGroupComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  create(group: any) {
-    let groupreq = new GroupRequest();
-    groupreq.nombre = group['nombre'];
-    groupreq.tema = group['tema'];
-    groupreq.descripcion = group['descripcion'];
-    groupreq.usuario_id = group['usuario_id'];
-    groupreq.curso_id = group['curso_id'];
-    
-    this.groupService.create(groupreq).subscribe(()=>{
+  create(group: GroupRequest) {
+    this.groupService.create(group).subscribe(()=>{
       this.groupService.getAllPageable().subscribe();
       this.router.navigate(['admin/groups']);
     });

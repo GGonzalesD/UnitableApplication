@@ -19,15 +19,8 @@ export class EditGroupComponent implements OnInit {
     this.groupId = Number.parseInt(this.router.url.split("/")[3]);
   }
 
-  edit(group: any) {
-    let groupreq = new GroupRequest();
-    groupreq.nombre = group['nombre'];
-    groupreq.tema = group['tema'];
-    groupreq.descripcion = group['descripcion'];
-    groupreq.usuario_id = group['usuario_id'];
-    groupreq.curso_id = group['curso_id'];
-    
-    this.groupService.edit(this.groupId, groupreq).subscribe(()=>{
+  edit(group: GroupRequest) {
+    this.groupService.edit(this.groupId, group).subscribe(()=>{
       this.groupService.getAllPageable().subscribe();
       this.router.navigate(['admin/groups']);
     });
