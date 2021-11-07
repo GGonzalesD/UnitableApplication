@@ -10,6 +10,10 @@ import { FormGroupComponent } from './groups/shared/form-group/form-group.compon
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from '../material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NewActividadComponent } from './actividades/new-actividad/new-actividad.component';
+import { EditActividadComponent } from './actividades/edit-actividad/edit-actividad.component';
+import { ActividadListComponent } from './actividades/actividad-list/actividad-list.component';
+import { DeleteActividadComponent } from './actividades/delete-actividad/delete-actividad.component';
 
 
 @NgModule({
@@ -18,6 +22,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     NewGroupComponent,
     EditGroupComponent,
     ListGroupComponent,
+
+    NewActividadComponent,
+    ActividadListComponent,
+    EditActividadComponent,
+    DeleteActividadComponent,
+
     FormGroupComponent
   ],
   imports: [

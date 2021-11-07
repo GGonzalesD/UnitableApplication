@@ -1,0 +1,40 @@
+<mat-grid-list cols="4" rowHeight="900px">
+    <mat-grid-tile colspan="3" style="background-color:rgb(48, 45, 45);">
+        EL HORARIO
+    </mat-grid-tile>
+    <mat-grid-tile style="background-color: darkgrey;">
+        <div class="container">
+    
+            <h3 class="text-center bold">Lista de Actividades</h3>
+        
+            <div *ngFor="let actividad of [1,2,3,4]">
+                <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title class="text-end">
+                        Actividad {{actividad}}
+                      </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <p>Id:</p>
+                    <p>Fecha de inicio:</p>
+                    <p>Fecha de fin:</p>
+                    <p>Duracion:</p>
+                    <p>Detalles:</p>
+                    <p>Activa:</p>
+                    <mat-action-row>
+                        <button mat-raised-button color="warn">EDITAR</button>
+                    </mat-action-row>
+                </mat-expansion-panel>
+            </div>
+
+            <div class="text-center">
+                <button mat-raised-button color="primary" routerLink="/admin/actividades/nuevo">
+                    Nueva Actividad
+                </button>
+            </div>
+
+        </div>        
+    </mat-grid-tile>
+  </mat-grid-list>
+
+
+

@@ -25,6 +25,12 @@ import { MatPaginatorImpl } from './mat-paginator';
 
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatListModule} from '@angular/material/list';
+
 @NgModule({
   declarations: [],
   providers:[
@@ -52,6 +58,12 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     
     MatAutocompleteModule,
     MatOptionModule,
+
+    MatCheckboxModule,
+    MatDatepickerModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatListModule,
   ],
   imports: [
     CommonModule
