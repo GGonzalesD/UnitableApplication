@@ -30,6 +30,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatListModule} from '@angular/material/list';
+import { FormsModule } from '@angular/forms';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [],
@@ -64,9 +66,10 @@ import {MatListModule} from '@angular/material/list';
     MatExpansionModule,
     MatGridListModule,
     MatListModule,
+    MatNativeDateModule
   ],
   imports: [
-    CommonModule
+    CommonModule,
   ]
 })
 export class MaterialModule { }

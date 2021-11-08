@@ -1,9 +1,13 @@
 mat-expansion-panel{
-    margin: 5px;
+    margin: 10px;
 }
 
 .bold{
     font-weight: bold;
     font-size: 30px;
-    height:10%;
+    margin: 20px;
+}
+
+.margin{
+    margin: 10px;
 }

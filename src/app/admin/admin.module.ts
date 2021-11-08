@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
@@ -9,7 +9,7 @@ import { ListGroupComponent } from './groups/list-group/list-group.component';
 import { FormGroupComponent } from './groups/shared/form-group/form-group.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from '../material/material.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NewActividadComponent } from './actividades/new-actividad/new-actividad.component';
 import { EditActividadComponent } from './actividades/edit-actividad/edit-actividad.component';
 import { ActividadListComponent } from './actividades/actividad-list/actividad-list.component';
@@ -35,7 +35,8 @@ import { DeleteActividadComponent } from './actividades/delete-actividad/delete-
     AdminRoutingModule,
     HttpClientModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
   ]
 })
 export class AdminModule { }

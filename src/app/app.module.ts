@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { UnauthorizedInterceptor } from './interceptors/unauthorized.interceptor';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { UnauthorizedInterceptor } from './interceptors/unauthorized.interceptor
     HttpClientModule,
     BrowserAnimationsModule,
     MatSnackBarModule,
+    FormsModule
   ],
   providers: [
     {

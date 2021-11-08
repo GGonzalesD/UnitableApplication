@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Actividad } from '../shared/actividad.model';
+import { ActividadService } from '../shared/actividad.service';
 
 @Component({
   selector: 'app-actividad-list',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActividadListComponent implements OnInit {
 
-  constructor() { }
+  actividades!: Actividad[];
+
+  constructor(private actividadService:ActividadService) { }
 
   ngOnInit(): void {
+    this.getAll();
   }
 
+  getAll():void{
+    this.actividadService.getAll()
+    .subscribe((data:Actividad[])=>this.actividades=data)
+  }
 }
