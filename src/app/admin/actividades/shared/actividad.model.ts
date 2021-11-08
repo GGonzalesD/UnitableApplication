@@ -1,4 +1,5 @@
 export interface Actividad {
+    id: number;
     nombre: string;
     detalles: string;
     fecha_ini: Date;

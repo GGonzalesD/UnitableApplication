@@ -13,7 +13,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NewActividadComponent } from './actividades/new-actividad/new-actividad.component';
 import { EditActividadComponent } from './actividades/edit-actividad/edit-actividad.component';
 import { ActividadListComponent } from './actividades/actividad-list/actividad-list.component';
-import { DeleteActividadComponent } from './actividades/delete-actividad/delete-actividad.component';
 import { UsuarioInfoComponent } from './usuarios/usuario-info/usuario-info.component';
 import { ListUsuariosComponent } from './usuarios/list-usuarios/list-usuarios.component';
 
@@ -28,7 +27,6 @@ import { ListUsuariosComponent } from './usuarios/list-usuarios/list-usuarios.co
     NewActividadComponent,
     ActividadListComponent,
     EditActividadComponent,
-    DeleteActividadComponent,
 
     UsuarioInfoComponent,
     ListUsuariosComponent,

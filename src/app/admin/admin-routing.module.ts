@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ActividadListComponent } from './actividades/actividad-list/actividad-list.component';
-import { DeleteActividadComponent } from './actividades/delete-actividad/delete-actividad.component';
 import { EditActividadComponent } from './actividades/edit-actividad/edit-actividad.component';
 import { NewActividadComponent } from './actividades/new-actividad/new-actividad.component';
 import { EditGroupComponent } from './groups/edit-group/edit-group.component';
@@ -39,10 +38,6 @@ const routes: Routes = [
       {
         path:'actividades/:id/editar',
         component:EditActividadComponent,
-      },
-      {
-        path:'actividades/:id/eliminar',
-        component:DeleteActividadComponent,
       },
       {
         path:'usuarios',

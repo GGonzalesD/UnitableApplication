@@ -1,11 +1,11 @@
-<div class="container mt-5">
+<div class="container mt-5" style="min-width: 500px;">
     <h1 class="fw-bold row justify-content-center"> 
         Nueva Actividad
     </h1>
 
     <div class="row justify-content-center">
-        <div class="col-md-6 col-lg-4">
-            <form (ngSubmit)="create()">
+        <div>
+            <form (ngSubmit)="create()" #loginForm="ngForm">
                 <div>
                     <mat-form-field appearance="outline" class="d-block">
                         <mat-label>Nombre</mat-label>
@@ -14,7 +14,12 @@
                             placeholder="Nombre"
                             [(ngModel)]="actividad.nombre"
                             name = "nombre"
+                            #nombre="ngModel"
+                            required
                         >
+                        <mat-error *ngIf="nombre.hasError('required')">
+                            Este campo es obligatorio
+                          </mat-error>
                     </mat-form-field>
             
                     <mat-form-field appearance="outline" class="d-block">
@@ -24,7 +29,12 @@
                             placeholder="Detalles"
                             [(ngModel)]="actividad.detalles"
                             name = "detalles"
+                            #detalles="ngModel"
+                            required
                         >
+                        <mat-error *ngIf="detalles.hasError('required')">
+                            Este campo es obligatorio
+                          </mat-error>
                     </mat-form-field>
 
                     <mat-form-field appearance="outline" class="d-block">
@@ -34,7 +44,12 @@
                             placeholder="Fecha de Inicio"
                             [(ngModel)]="actividad.fecha_ini"
                             name = "fecha_ini"
+                            #fecha_ini="ngModel"
+                            required
                         >
+                        <mat-error *ngIf="fecha_ini.hasError('required')">
+                            Este campo es obligatorio
+                          </mat-error>
                     </mat-form-field>
             
                     <mat-form-field appearance="outline" class="d-block">
@@ -44,11 +59,19 @@
                             placeholder="Fecha de Fin"
                             [(ngModel)]="actividad.fecha_fin"
                             name = "fecha_fin"
+                            #fecha_fin="ngModel"
+                            required
                         >
+                        <mat-error *ngIf="fecha_fin.hasError('required')">
+                            Este campo es obligatorio
+                          </mat-error>
                     </mat-form-field>
             
-                    <div class="d-flex justify-content-center" >
-                        <button mat-raised-button color="primary" class="mt-5 w-100">
+                    <div class="d-flex justify-content-around">
+                        <button mat-raised-button type="button" color="primary" class="mt-5" style="width: 35%;" mat-dialog-close>
+                            Cancelar
+                        </button>
+                        <button mat-raised-button type="submit" color="primary" class="mt-5" style="width: 35%;" mat-dialog-close [disabled]="loginForm.invalid">
                             Guardar
                         </button>
                     </div>

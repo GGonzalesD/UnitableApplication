@@ -3,15 +3,15 @@
         <label class="text-left bold">
             Lista de Actividades
         </label>
-        <button class="margin" mat-raised-button color="primary" routerLink="/admin/actividades/nuevo">
+        <button class="margin" mat-raised-button color="primary" mat-button (click)="openDialog()">
             Nueva Actividad
         </button>
     </div>
-    
+
     <div *ngFor="let actividad of actividades">
-        <mat-expansion-panel hideToggle style="background-color: aqua;">
+        <mat-expansion-panel style="background-color: rgb(247, 243, 211);">
             <mat-expansion-panel-header>
-              <mat-panel-title class="text-end">
+              <mat-panel-title class="text-end" style="font-size: 20px;">
                 {{actividad.nombre}}
               </mat-panel-title>
             </mat-expansion-panel-header>
@@ -20,10 +20,12 @@
             <p>Fecha de fin: {{actividad.fecha_fin}}</p>
             <p>Activa: {{actividad.activa}}</p>
             <mat-action-row>
-                <button mat-raised-button color="warn">EDITAR</button>
+                <button mat-raised-button color="warn" (click)="deleteActividad(actividad.id, actividad.nombre)">ELIMINAR</button>
+                <button mat-raised-button color="primary">EDITAR</button>
+                <button mat-raised-button color="accent">TERMINAR</button>
             </mat-action-row>
         </mat-expansion-panel>
-    </div> 
+    </div>
 </div>    
 
 

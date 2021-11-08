@@ -19,4 +19,8 @@ export class ActividadService {
   createActividad(actividadReq:ActividadReq){
     return this.http.post(`${this.apiBase}/actividades/agregar`, actividadReq)
   }
+
+  deleteActividad(id: number){
+    return this.http.delete(`${this.apiBase}/actividades/${id}`)
+  }
 }
