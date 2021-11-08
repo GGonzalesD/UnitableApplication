@@ -20,10 +20,17 @@
             <p>Fecha de fin: {{actividad.fecha_fin}}</p>
             <p>Activa: {{actividad.activa}}</p>
             <mat-action-row>
-                <button mat-raised-button color="warn" (click)="deleteActividad(actividad.id, actividad.nombre)">ELIMINAR</button>
-                <button mat-raised-button color="primary" mat-button (click)="openDialog2(actividad.id, actividad)" >EDITAR</button>
-                <button mat-raised-button color="accent">TERMINAR</button>
+                <div class="d-flex justify-content-between" style="width: 100%;">
+                    <div>
+                        <button mat-raised-button color="accent" (click)="terminarActividad(actividad.id, actividad)">TERMINAR</button>
+                    </div>
+                    <div>
+                        <button mat-raised-button color="warn" (click)="deleteActividad(actividad.id, actividad.nombre)">ELIMINAR</button>
+                        <button mat-raised-button color="primary" mat-button (click)="openDialog2(actividad.id, actividad)" >EDITAR</button>
+                    </div>
+                </div>
             </mat-action-row>
+            
         </mat-expansion-panel>
     </div>
 </div>    

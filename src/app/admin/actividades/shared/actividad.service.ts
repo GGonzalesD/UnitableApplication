@@ -26,4 +26,8 @@ export class ActividadService {
   editActividad(id:number, actividadReq:ActividadReq){
     return this.http.put(`${this.apiBase}/actividades/${id}`, actividadReq)
   }
+
+  terminarActividad(id:number, actividadReq:ActividadReq){
+    return this.http.put(`${this.apiBase}/actividades/finish/${id}`, actividadReq)
+  }
 }
