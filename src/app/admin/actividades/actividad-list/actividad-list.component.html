@@ -21,7 +21,7 @@
             <p>Activa: {{actividad.activa}}</p>
             <mat-action-row>
                 <button mat-raised-button color="warn" (click)="deleteActividad(actividad.id, actividad.nombre)">ELIMINAR</button>
-                <button mat-raised-button color="primary">EDITAR</button>
+                <button mat-raised-button color="primary" mat-button (click)="openDialog2(actividad.id, actividad)" >EDITAR</button>
                 <button mat-raised-button color="accent">TERMINAR</button>
             </mat-action-row>
         </mat-expansion-panel>

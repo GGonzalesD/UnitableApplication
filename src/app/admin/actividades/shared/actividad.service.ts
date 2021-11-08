@@ -23,4 +23,7 @@ export class ActividadService {
   deleteActividad(id: number){
     return this.http.delete(`${this.apiBase}/actividades/${id}`)
   }
+  editActividad(id:number, actividadReq:ActividadReq){
+    return this.http.put(`${this.apiBase}/actividades/${id}`, actividadReq)
+  }
 }

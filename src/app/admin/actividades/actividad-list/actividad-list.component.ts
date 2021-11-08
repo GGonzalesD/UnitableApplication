@@ -4,6 +4,7 @@ import { NewActividadComponent } from '../new-actividad/new-actividad.component'
 import { Actividad } from '../shared/actividad.model';
 import { ActividadService } from '../shared/actividad.service';
 import { Router } from '@angular/router';
+import { EditActividadComponent } from '../edit-actividad/edit-actividad.component';
 
 @Component({
   selector: 'app-actividad-list',
@@ -27,6 +28,14 @@ export class ActividadListComponent implements OnInit {
 
   openDialog() {
     const dialogRef = this.dialog.open(NewActividadComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  openDialog2(id:number, actividadReq:any) {
+    const dialogRef = this.dialog.open(EditActividadComponent,{data:{actividad:{nombre: actividadReq.nombre, detalles: actividadReq.detalles, fecha_ini: actividadReq.fecha_ini, fecha_fin: actividadReq.fecha_fin}, id:id}});
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
