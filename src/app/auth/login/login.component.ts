@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   onSubmit(): void{
     this.authService.logIn(this.login).subscribe((data:any)=>{
       this.userStorageService.set(data['body']);
-      this.router.navigate(['/admin/groups'])
+      this.router.navigate(['/admin/actividades'])
     }, (error)=>{
       this.invalid = true;
     });

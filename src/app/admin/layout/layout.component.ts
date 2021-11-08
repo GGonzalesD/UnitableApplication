@@ -17,6 +17,10 @@ export class LayoutComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  verPerfil(): void{
+    this.router.navigate(['admin/usuario'])
+  }
+
   signOut(): void{
     this.userStorageService.destroy();
     this.router.navigate(['/auth/login']);

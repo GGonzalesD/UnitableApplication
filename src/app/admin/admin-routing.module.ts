@@ -8,6 +8,8 @@ import { EditGroupComponent } from './groups/edit-group/edit-group.component';
 import { ListGroupComponent } from './groups/list-group/list-group.component';
 import { NewGroupComponent } from './groups/new-group/new-group.component';
 import { LayoutComponent } from './layout/layout.component';
+import { ListUsuariosComponent } from './usuarios/list-usuarios/list-usuarios.component';
+import { UsuarioInfoComponent } from './usuarios/usuario-info/usuario-info.component';
 
 const routes: Routes = [
   {
@@ -41,6 +43,14 @@ const routes: Routes = [
       {
         path:'actividades/:id/eliminar',
         component:DeleteActividadComponent,
+      },
+      {
+        path:'usuarios',
+        component:ListUsuariosComponent
+      },
+      {
+        path:'usuario',
+        component:UsuarioInfoComponent
       }
     ]
   }

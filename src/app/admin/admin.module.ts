@@ -14,6 +14,8 @@ import { NewActividadComponent } from './actividades/new-actividad/new-actividad
 import { EditActividadComponent } from './actividades/edit-actividad/edit-actividad.component';
 import { ActividadListComponent } from './actividades/actividad-list/actividad-list.component';
 import { DeleteActividadComponent } from './actividades/delete-actividad/delete-actividad.component';
+import { UsuarioInfoComponent } from './usuarios/usuario-info/usuario-info.component';
+import { ListUsuariosComponent } from './usuarios/list-usuarios/list-usuarios.component';
 
 
 @NgModule({
@@ -28,7 +30,11 @@ import { DeleteActividadComponent } from './actividades/delete-actividad/delete-
     EditActividadComponent,
     DeleteActividadComponent,
 
+    UsuarioInfoComponent,
+    ListUsuariosComponent,
+    
     FormGroupComponent
+          
   ],
   imports: [
     CommonModule,

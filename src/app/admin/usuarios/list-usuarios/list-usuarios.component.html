@@ -1,0 +1,22 @@
+<div>
+    <div class="d-flex justify-content-between">
+        <label class="text-left bold">
+            Usuarios de la Aplicación
+        </label>
+    </div>
+
+    <div *ngFor="let usuario of usuarios">
+        <mat-expansion-panel hideToggle style="background-color: lightgray;">
+            <mat-expansion-panel-header>
+                <mat-panel-title class="text-end">
+                    {{usuario.nombres}} {{usuario.apellidos}} ({{usuario.correo}})
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>Carrera: {{usuario.carrera}}</p>
+            <p>Tipo de usuario: {{usuario.tipo_usuario}}</p>
+            <mat-action-row>
+                <button mat-raised-button color="warn">FOLLOW</button>
+            </mat-action-row>
+        </mat-expansion-panel>
+    </div>
+</div>
