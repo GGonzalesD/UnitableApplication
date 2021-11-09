@@ -1,7 +1,9 @@
 <mat-card *ngIf="usuario" class="user">
     <div class="nombres-user">
-        <img src="../../../../assets/profilePic.png" height="50" width="50" />
-        <div><mat-card-title>{{usuario.nombres}} {{usuario.apellidos}}</mat-card-title></div>
+        <div class="nombres">
+            <img src="../../../../assets/profilePic.png" height="50" width="50" />
+            <div><mat-card-title>{{usuario.nombres}} {{usuario.apellidos}}</mat-card-title></div>
+        </div>
         <div class="monedas">
             <img src="../../../../assets/monedas.png" height="25" width="25" />
             <p id="mon">Monedas: {{usuario.num_monedas}}</p>

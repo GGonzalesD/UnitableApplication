@@ -19,6 +19,12 @@ mat-expansion-panel{
 
 .nombres-user {
     display: flex;
+    justify-content: space-evenly;
+}
+
+.nombres {
+    display: flex;
+    justify-content: space-around;
 }
 
 .img {
@@ -29,7 +35,7 @@ mat-expansion-panel{
 .monedas {
     display: flex;
     font-weight: bold;
-    margin: 15px 0px 0px 1000px;
+    margin: 15px 0px 0px 600px;
 }
 
 #mon {
