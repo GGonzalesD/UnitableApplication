@@ -15,13 +15,14 @@ export class UsuarioInfoComponent implements OnInit {
   recompensas!: Recompensa[];
 
   usuario!: Usuario;
+  contactos!: Usuario[];
 
   constructor(private usuarioService: UsuarioService, private router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getUsuarioInfo();
     this.getRecompensas();
-
+    this.getContactos();
   }
 
   getUsuarioInfo(): void {
@@ -32,6 +33,11 @@ export class UsuarioInfoComponent implements OnInit {
   getRecompensas(): void {
     this.usuarioService.getRecompensas()
     .subscribe((data:Recompensa[]) => this.recompensas = data)
+  }
+
+  getContactos(): void {
+    this.usuarioService.getContactos()
+    .subscribe((data:Usuario[]) => this.contactos = data)
   }
 
   updateDialog(usuarioReq: any): void {

@@ -1,7 +1,51 @@
-mat-card{
-    margin: 100px;
+mat-card-title {
+    margin: 15px;
+}
+
+mat-expansion-panel{
+    margin: 15px 25px;
+}
+
+.user{
+    margin: 50px 250px;
 }
 
 .info {
+    display: flex;
+    justify-content: space-around;
     padding: 20px 0px;
+    font-size: 20px;
+}
+
+.nombres-user {
+    display: flex;
+}
+
+.img {
+    background: url(../../../../assets/profilePic.png) center no-repeat;
+    background-size: auto;
+}
+
+.monedas {
+    display: flex;
+    font-weight: bold;
+    margin: 15px 0px 0px 1000px;
+}
+
+#mon {
+    margin: 3px;
+}
+
+.follow-recom {
+    display: flex;
+}
+
+.listado-recom {
+    margin: 10px 50px 0px 250px;
+    width: 1000px;
+}
+
+.listado-follows {
+    margin: 10px 250px 0px 50px;
+    width: 1000px;
 }

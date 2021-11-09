@@ -1,12 +1,22 @@
-<mat-card *ngIf="usuario">
-    <mat-card-title>{{usuario.nombres}} {{usuario.apellidos}}</mat-card-title>
+<mat-card *ngIf="usuario" class="user">
+    <div class="nombres-user">
+        <img src="../../../../assets/profilePic.png" height="50" width="50" />
+        <div><mat-card-title>{{usuario.nombres}} {{usuario.apellidos}}</mat-card-title></div>
+        <div class="monedas">
+            <img src="../../../../assets/monedas.png" height="25" width="25" />
+            <p id="mon">Monedas: {{usuario.num_monedas}}</p>
+        </div>
+    </div>
     <mat-card-content>
         <div class="info">
-            <p>Correo: {{usuario.correo}}</p>
-            <p>Carrera: {{usuario.carrera}}</p>
-            <p>Actividades completadas: {{usuario.num_act_completas}}</p>
-            <p>Monedas: {{usuario.num_monedas}}</p>
-            <p>Tipo de Usuario: {{usuario.tipo_usuario}}</p>
+            <div>
+                <p>Correo: {{usuario.correo}}</p>
+                <p>Carrera: {{usuario.carrera}}</p>
+            </div>
+            <div>
+                <p>Actividades completadas: {{usuario.num_act_completas}}</p>
+                <p>Tipo de Usuario: {{usuario.tipo_usuario}}</p>
+            </div>
         </div>
     </mat-card-content>
     <mat-action-row>
@@ -23,14 +33,34 @@
     </mat-action-row>
 </mat-card>
 
-<div *ngFor="let recompensa of recompensas">
-    <mat-expansion-panel style="background-color: rgb(247, 243, 211);">
-        <mat-expansion-panel-header>
-            <mat-panel-title class="text-end" style="font-size: 20px;">
-                {{recompensa.detalles}}
-            </mat-panel-title>
-        </mat-expansion-panel-header>
-          <p>Detalles: {{recompensa.detalles}}</p>   
-    </mat-expansion-panel>
+<div class="follow-recom">
+    <mat-card class="listado-recom">
+        <mat-card-title>Recompensas</mat-card-title>
+        <div *ngFor="let recompensa of recompensas">
+                <mat-expansion-panel style="background-color: rgb(247, 243, 211);">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title class="text-end" style="font-size: 20px;">
+                            {{recompensa.nombre}}
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <p>Detalles: {{recompensa.detalles}}</p>   
+                </mat-expansion-panel>
+        </div>
+    </mat-card>
+
+    <mat-card class="listado-follows">
+        <mat-card-title>Usuarios Seguidos</mat-card-title>
+        <div *ngFor="let contacto of contactos">
+            <mat-expansion-panel hideToggle style="background-color: lightgray;">
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="text-end">
+                        {{contacto.nombres}} {{contacto.apellidos}} ({{contacto.correo}})
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p>Carrera: {{contacto.carrera}}</p>
+                <p>Tipo de usuario: {{contacto.tipo_usuario}}</p>
+            </mat-expansion-panel>
+        </div>
+    </mat-card>
 </div>
 

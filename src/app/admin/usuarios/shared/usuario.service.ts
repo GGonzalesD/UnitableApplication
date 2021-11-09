@@ -35,4 +35,8 @@ export class UsuarioService {
   followUsuario(fwId: number, usuario: Usuario) {
     return this.http.put<Boolean>(`${this.apiBase}/usuarios/follow/${fwId}`, usuario)
   }
+
+  getContactos() {
+    return this.http.get<Usuario[]>(`${this.apiBase}/usuarios/follows`)
+  }
 }
