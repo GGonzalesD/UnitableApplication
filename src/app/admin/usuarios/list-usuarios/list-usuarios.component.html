@@ -15,7 +15,13 @@
             <p>Carrera: {{usuario.carrera}}</p>
             <p>Tipo de usuario: {{usuario.tipo_usuario}}</p>
             <mat-action-row>
-                <button mat-raised-button color="basic" (click)="followUsuario(usuario.id, usuario)">FOLLOW</button>
+                <button *ngIf="!usuario.following; else unfollow" mat-raised-button color="basic"  (click)="followUsuario(usuario.id)">FOLLOW</button>
+                <ng-template #unfollow>
+                    <button mat-raised-button color="basic" (click)="followUsuario(usuario.id)">UNFOLLOW</button>
+                </ng-template>
+                
+                
+
             </mat-action-row>
         </mat-expansion-panel>
     </div>

@@ -16,6 +16,10 @@ export class UsuarioService {
     return this.http.get<Usuario[]>(`${this.apiBase}/usuarios`)
   }
 
+  getUsersToFollow(){
+    return this.http.get<any[]>(`${this.apiBase}/usuarios/allToFollow`)
+  }
+
   getUsuarioInfo() {
     return this.http.get<Usuario>(`${this.apiBase}/usuarios/info`)
   }
@@ -32,8 +36,8 @@ export class UsuarioService {
     return this.http.delete<any>(`${this.apiBase}/usuarios/delete`)
   }
 
-  followUsuario(fwId: number, usuario: Usuario) {
-    return this.http.put<Boolean>(`${this.apiBase}/usuarios/follow/${fwId}`, usuario)
+  followUsuario(fwId: number) {
+    return this.http.put<Boolean>(`${this.apiBase}/usuarios/follow/${fwId}`, {})
   }
 
   getContactos() {

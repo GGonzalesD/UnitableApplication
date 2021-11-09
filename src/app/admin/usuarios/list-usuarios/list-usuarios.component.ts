@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Usuario, UsuarioReq } from '../shared/usuario.model';
+import { Usuario } from '../shared/usuario.model';
 import { UsuarioService } from '../shared/usuario.service';
 
 @Component({
@@ -19,14 +19,14 @@ export class ListUsuariosComponent implements OnInit {
   }
 
   getAll(): void {
-    this.usuarioService.getAllUsers()
-    .subscribe((data:Usuario[]) => this.usuarios = data)
+    this.usuarioService.getUsersToFollow()
+    .subscribe((data:any[]) => this.usuarios = data)
   }
 
-  followUsuario(fwId: number, usuario: Usuario): void {
-    this.usuarioService.followUsuario(fwId, usuario)
+  followUsuario(fwId: number): void {
+    this.usuarioService.followUsuario(fwId)
     .subscribe(() => {
-      this.router.navigate(['/admin/usuario'])
+      this.getAll();
     })
   }
 

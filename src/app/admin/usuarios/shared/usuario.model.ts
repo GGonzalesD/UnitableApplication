@@ -8,6 +8,7 @@ export interface Usuario {
     num_act_completas: number;
     num_monedas: number;
     tipo_usuario: string;
+    following: boolean;
 }
 
 export interface UsuarioReq {
