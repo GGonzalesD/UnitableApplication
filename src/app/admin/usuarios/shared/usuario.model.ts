@@ -1,5 +1,6 @@
 export interface Usuario {
-	id: number;
+
+    id: number;
     nombres: string;
     apellidos: string;
     correo: string;
@@ -7,4 +8,12 @@ export interface Usuario {
     num_act_completas: number;
     num_monedas: number;
     tipo_usuario: string;
+}
+
+export interface Recompensa{
+    id: number;
+    nombre: string;
+    detalles:string;
+
+
 }

@@ -8,3 +8,15 @@
         <p>Tipo de Usuario: {{usuario.tipo_usuario}}</p>
     </mat-card-content>
 </mat-card>
+
+<div *ngFor="let recompensa of recompensas">
+    <mat-expansion-panel style="background-color: rgb(247, 243, 211);">
+        <mat-expansion-panel-header>
+            <mat-panel-title class="text-end" style="font-size: 20px;">
+                {{recompensa.detalles}}
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+          <p>Detalles: {{recompensa.detalles}}</p>   
+    </mat-expansion-panel>
+</div>
+

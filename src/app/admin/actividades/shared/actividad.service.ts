@@ -30,4 +30,6 @@ export class ActividadService {
   terminarActividad(id:number, actividadReq:ActividadReq){
     return this.http.put(`${this.apiBase}/actividades/finish/${id}`, actividadReq)
   }
+
+
 }

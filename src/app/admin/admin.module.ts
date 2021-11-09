@@ -31,7 +31,7 @@ import { ListUsuariosComponent } from './usuarios/list-usuarios/list-usuarios.co
     UsuarioInfoComponent,
     ListUsuariosComponent,
     
-    FormGroupComponent
+    FormGroupComponent,
           
   ],
   imports: [
