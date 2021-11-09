@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card *ngIf="usuario">
     <mat-card-title>{{usuario.nombres}} {{usuario.apellidos}}</mat-card-title>
     <mat-card-content>
         <p>Correo: {{usuario.correo}}</p>
