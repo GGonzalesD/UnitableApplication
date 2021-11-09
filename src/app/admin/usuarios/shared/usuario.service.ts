@@ -31,4 +31,8 @@ export class UsuarioService {
   deleteUsuario() {
     return this.http.delete<any>(`${this.apiBase}/usuarios/delete`)
   }
+
+  followUsuario(fwId: number, usuario: Usuario) {
+    return this.http.put<Boolean>(`${this.apiBase}/usuarios/follow/${fwId}`, usuario)
+  }
 }

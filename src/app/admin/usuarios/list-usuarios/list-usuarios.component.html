@@ -15,7 +15,7 @@
             <p>Carrera: {{usuario.carrera}}</p>
             <p>Tipo de usuario: {{usuario.tipo_usuario}}</p>
             <mat-action-row>
-                <button mat-raised-button color="warn">FOLLOW</button>
+                <button mat-raised-button color="basic" (click)="followUsuario(usuario.id, usuario)">FOLLOW</button>
             </mat-action-row>
         </mat-expansion-panel>
     </div>
