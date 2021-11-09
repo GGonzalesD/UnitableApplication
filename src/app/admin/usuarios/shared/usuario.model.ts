@@ -10,10 +10,17 @@ export interface Usuario {
     tipo_usuario: string;
 }
 
+export interface UsuarioReq {
+    nombres: string;
+    apellidos: string;
+    correo: string;
+    password: string;
+    carrera: string;
+    tipo_usuario: string;
+}
+
 export interface Recompensa{
     id: number;
     nombre: string;
     detalles:string;
-
-
 }

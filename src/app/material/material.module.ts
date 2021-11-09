@@ -64,6 +64,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 
     MatCheckboxModule,
     MatDatepickerModule,
+    MatDialogModule,
     MatExpansionModule,
     MatGridListModule,
     MatListModule,

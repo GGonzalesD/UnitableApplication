@@ -15,6 +15,7 @@ import { EditActividadComponent } from './actividades/edit-actividad/edit-activi
 import { ActividadListComponent } from './actividades/actividad-list/actividad-list.component';
 import { UsuarioInfoComponent } from './usuarios/usuario-info/usuario-info.component';
 import { ListUsuariosComponent } from './usuarios/list-usuarios/list-usuarios.component';
+import { EditUsuarioComponent } from './usuarios/edit-usuario/edit-usuario.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { ListUsuariosComponent } from './usuarios/list-usuarios/list-usuarios.co
 
     UsuarioInfoComponent,
     ListUsuariosComponent,
+    EditUsuarioComponent,
     
     FormGroupComponent,
           

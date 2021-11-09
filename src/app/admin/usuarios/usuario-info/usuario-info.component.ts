@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { EditUsuarioComponent } from '../edit-usuario/edit-usuario.component';
 import { Recompensa, Usuario } from '../shared/usuario.model';
 import { UsuarioService } from '../shared/usuario.service';
 
@@ -14,7 +16,7 @@ export class UsuarioInfoComponent implements OnInit {
 
   usuario!: Usuario;
 
-  constructor(private usuarioService: UsuarioService, private router: Router) { }
+  constructor(private usuarioService: UsuarioService, private router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getUsuarioInfo();
@@ -30,6 +32,16 @@ export class UsuarioInfoComponent implements OnInit {
   getRecompensas(): void {
     this.usuarioService.getRecompensas()
     .subscribe((data:Recompensa[]) => this.recompensas = data)
+  }
+
+  updateDialog(usuarioReq: any): void {
+    const dialogUpd = this.dialog.open(EditUsuarioComponent, {data:{usuario:{nombres: usuarioReq.nombres, 
+    apellidos: usuarioReq.apellidos, correo: usuarioReq.correo, password: usuarioReq.password,
+    carrera: usuarioReq.carrera, tipo_usuario: usuarioReq.tipo_usuario}}});
+
+    dialogUpd.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`)
+    });
   }
 
   deleteUsuario(): void {
