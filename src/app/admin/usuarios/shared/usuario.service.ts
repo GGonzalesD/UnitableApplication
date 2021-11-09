@@ -17,12 +17,14 @@ export class UsuarioService {
   }
 
   getUsuarioInfo() {
-    //return this.http.get<Actividad[]>(`${this.apiBase}/actividades/listar`)
     return this.http.get<Usuario>(`${this.apiBase}/usuarios/info`)
   }
 
   getRecompensas(){
     return this.http.get<Recompensa[]>(`${this.apiBase}/usuarios/recompensas`)
+  }
 
+  deleteUsuario() {
+    return this.http.delete<any>(`${this.apiBase}/usuarios/delete`)
   }
 }
