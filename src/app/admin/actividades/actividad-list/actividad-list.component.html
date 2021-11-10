@@ -26,7 +26,7 @@
                     </div>
                     <div>
                         <button mat-raised-button color="warn" (click)="deleteActividad(actividad.id, actividad.nombre)">ELIMINAR</button>
-                        <button mat-raised-button color="primary" mat-button (click)="openDialog2(actividad.id, actividad)" >EDITAR</button>
+                        <button mat-raised-button color="primary" mat-button (click)="openDialog2(actividad.id, actividad)" [disabled]="!actividad.activa">EDITAR</button>
                     </div>
                 </div>
             </mat-action-row>
