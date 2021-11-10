@@ -16,9 +16,11 @@ export class NewGroupComponent implements OnInit {
   }
 
   create(group: GroupRequest) {
-    this.groupService.create(group).subscribe(()=>{
-      this.groupService.getAllPageable().subscribe();
-      this.router.navigate(['admin/groups']);
+    this.groupService.create(group).subscribe((data:any)=>{
+      this.groupService.join(data['id']).subscribe(()=>{
+        this.groupService.getAllPageable().subscribe();
+        this.router.navigate(['admin/groups']);
+      })
     });
   }
 }

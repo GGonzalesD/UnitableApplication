@@ -52,4 +52,8 @@ export class GroupService {
     return this.http.delete(`${this.apiBase}/grupos/${id}`);
   }
 
+  join(id: number){
+    return this.http.put(`${this.apiBase}/usuarios/join/${id}`, {});
+  }
+
 }
