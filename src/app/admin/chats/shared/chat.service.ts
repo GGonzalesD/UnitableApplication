@@ -16,4 +16,9 @@ export class ChatService {
   get(id:string){
     return this.http.get(`${this.apiBase}/chats/${id}`);
   }
+
+  sendMessage(chatId:number, message:string){
+    return this.http.post(`${this.apiBase}/mensajes`, { chat_id: chatId, mensaje:message });
+
+  }
 }

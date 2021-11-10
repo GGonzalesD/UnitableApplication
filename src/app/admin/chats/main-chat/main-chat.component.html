@@ -1,9 +1,14 @@
-
-
 <div>
-
+	<table *ngIf="chat">
+		<tr *ngFor="let message of chat.mensajes.reverse().slice(0,6).reverse()">
+			<mat-card class="mat-card-message">
+				<mat-card-title>{{message.mensaje}}</mat-card-title>
+				<mat-card-subtitle>{{message.hora_mensaje}}</mat-card-subtitle>
+			</mat-card>
+		</tr>
+	</table>
 </div>
 
 <div>
-	<app-form-message (onSend)="sendMessage($event)"></app-form-message>
+	<app-form-message *ngIf="chat" (onSend)="sendMessage($event)"></app-form-message>
 </div>

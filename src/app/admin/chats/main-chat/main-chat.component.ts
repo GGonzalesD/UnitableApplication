@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SessionUser } from 'src/app/auth/shared/session-user';
+import { UserStorageService } from 'src/app/auth/shared/user-storage.service';
 import { Chat } from '../shared/chat.model';
 import { ChatService } from '../shared/chat.service';
 
@@ -11,26 +13,34 @@ import { ChatService } from '../shared/chat.service';
 export class MainChatComponent implements OnInit {
 
   public chat!: Chat;
+  public usuario!: SessionUser;
+  public id!: string | null;
 
   constructor(private chatService:ChatService,
     private route:ActivatedRoute,
-    private router:Router
+    private router:Router,
+    private userStorageService:UserStorageService
     ) { }
 
   ngOnInit(): void {
-    let id = this.route.snapshot.paramMap.get('id');
-    if(id){
-      this.chatService.get(id).subscribe(data => {
+    this.id = this.route.snapshot.paramMap.get('id');
+    this.usuario = this.userStorageService.user;
+    if(this.id){
+      this.chatService.get(this.id).subscribe(data => {
         this.chat = data as Chat;
         console.log(data);
       });
-    }else{
-      
     }
   }
 
   sendMessage(e:any){
-    console.log(e);
+    this.chatService.sendMessage(this.chat.id, e).subscribe( _ => {
+      if(this.id){
+        this.chatService.get(this.id).subscribe(data => {
+          this.chat = data as Chat;
+        });
+      }
+    });
+    
   }
-
 }
