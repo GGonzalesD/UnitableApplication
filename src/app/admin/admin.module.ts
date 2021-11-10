@@ -16,6 +16,8 @@ import { ActividadListComponent } from './actividades/actividad-list/actividad-l
 import { UsuarioInfoComponent } from './usuarios/usuario-info/usuario-info.component';
 import { ListUsuariosComponent } from './usuarios/list-usuarios/list-usuarios.component';
 import { EditUsuarioComponent } from './usuarios/edit-usuario/edit-usuario.component';
+import { MainChatComponent } from './chats/main-chat/main-chat.component';
+import { FormMessageComponent } from './chats/form-message/form-message.component';
 
 
 @NgModule({
@@ -34,6 +36,8 @@ import { EditUsuarioComponent } from './usuarios/edit-usuario/edit-usuario.compo
     EditUsuarioComponent,
     
     FormGroupComponent,
+         MainChatComponent,
+         FormMessageComponent,
           
   ],
   imports: [

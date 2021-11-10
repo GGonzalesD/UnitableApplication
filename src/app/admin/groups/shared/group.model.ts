@@ -19,7 +19,7 @@ export class Group {
 	descripcion: string;
 	fecha_creacion: Date;
 	fecha_fin: null|Date;
-	char: Chat;
+	chat: Chat;
 	curso: Curso;
 }
 

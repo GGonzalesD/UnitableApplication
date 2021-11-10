@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { Group } from '../shared/group.model';
 import { GroupService } from '../shared/group.service';
 
@@ -18,7 +19,9 @@ export class ListGroupComponent implements OnInit {
   dataSource!:MatTableDataSource<Group>;
   cantidad:number=0;
 
-  constructor(private groupService:GroupService) { }
+  constructor(private groupService:GroupService,
+      private router:Router
+    ) { }
 
   ngOnInit(): void {
     this.getAll();
@@ -45,6 +48,10 @@ export class ListGroupComponent implements OnInit {
         this.getAll();
       });
     }
+  }
+
+  goToChat(id:number){
+    this.router.navigate([`admin/chats/${id}`]);
   }
 
   mostrarMas(e:any){

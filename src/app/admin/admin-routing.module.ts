@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ActividadListComponent } from './actividades/actividad-list/actividad-list.component';
 import { EditActividadComponent } from './actividades/edit-actividad/edit-actividad.component';
 import { NewActividadComponent } from './actividades/new-actividad/new-actividad.component';
+import { MainChatComponent } from './chats/main-chat/main-chat.component';
 import { EditGroupComponent } from './groups/edit-group/edit-group.component';
 import { ListGroupComponent } from './groups/list-group/list-group.component';
 import { NewGroupComponent } from './groups/new-group/new-group.component';
@@ -46,6 +47,10 @@ const routes: Routes = [
       {
         path:'usuario',
         component:UsuarioInfoComponent
+      },
+      {
+        path:'chats/:id',
+        component:MainChatComponent
       }
     ]
   }
