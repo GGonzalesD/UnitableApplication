@@ -54,6 +54,13 @@ export class ListGroupComponent implements OnInit {
     this.router.navigate([`admin/chats/${id}`]);
   }
 
+  join(id: number, chatId: number) {
+    this.groupService.join(id)
+    .subscribe(() => {
+      this.router.navigate([`admin/chats/${id}`]);
+    })
+  }
+
   mostrarMas(e:any){
     this.groupService.getAllPageable(e.pageIndex, e.pageSize).subscribe((data)=>{
       this.cantidad = data.totalElements;
