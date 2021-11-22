@@ -6,6 +6,16 @@ mat-expansion-panel{
     margin: 15px 25px;
 }
 
+.mat-get {
+    background-color: green;
+    color: #fff;
+}
+
+.mat-cancel {
+    background-color: red;
+    color: #fff;
+}
+
 .user{
     margin: 50px 250px;
 }

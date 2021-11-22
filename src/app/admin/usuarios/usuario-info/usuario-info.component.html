@@ -1,4 +1,11 @@
 <mat-card *ngIf="usuario" class="user">
+    <mat-action-row>
+        <button *ngIf="!usuario.isPremium; else notPremium" mat-raised-button color="get" (click)="get_cancel_Premium()">Get Premium</button>
+        <ng-template #notPremium>
+            <button mat-raised-button color="cancel" (click)="get_cancel_Premium()">Cancel Premium</button>
+        </ng-template>
+    </mat-action-row>
+    <mat-action-row></mat-action-row>
     <div class="nombres-user">
         <div class="nombres">
             <img src="../../../../assets/profilePic.png" height="50" width="50" />

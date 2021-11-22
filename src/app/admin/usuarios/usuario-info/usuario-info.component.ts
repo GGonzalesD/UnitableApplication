@@ -60,6 +60,14 @@ export class UsuarioInfoComponent implements OnInit {
     }
   }
 
-  
+  get_cancel_Premium(): void {
+    const ok = confirm(`¿Está seguro que desea realizar esta operación?`);
+    if(ok) {
+      this.usuarioService.get_cancel_Premium()
+      .subscribe(() => {
+        this.getUsuarioInfo();
+      });
+    }
+  }
 
 }

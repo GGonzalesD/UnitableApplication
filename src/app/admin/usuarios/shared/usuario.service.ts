@@ -43,4 +43,8 @@ export class UsuarioService {
   getContactos() {
     return this.http.get<Usuario[]>(`${this.apiBase}/usuarios/follows`)
   }
+
+  get_cancel_Premium() {
+    return this.http.put<Boolean>(`${this.apiBase}/usuarios/premium`, {})
+  }
 }
