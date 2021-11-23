@@ -1,24 +1,20 @@
-<div class="col-md-offset-3 mx-auto">
+<div style="margin: 20px;">
 	<form
 	(ngSubmit)="sendMessage()"
 	  autocomplete="off"
 	>
+		<mat-form-field appearance="outline" class="d-block">
+			<mat-label>Message</mat-label>
+			<input
+				matInput
+				[(ngModel)]="message"
+				name = "message"
+				placeholder="Message"
+			/>
+		</mat-form-field>
 
-	<mat-form-field appearance="outline" class="d-block">
-		<mat-label>Message</mat-label>
-		<input
-			matInput
-			[(ngModel)]="message"
-			name = "message"
-			placeholder="Message"
-		/>
-	</mat-form-field>
-
-	<span class="spacer"></span>
-
-	<button mat-button color="primary" type="submit">
-		<mat-icon>send</mat-icon>
-	</button>
-
+		<button mat-button color="primary" type="submit">
+			<mat-icon>send</mat-icon>
+		</button>
 	</form>
 </div>
