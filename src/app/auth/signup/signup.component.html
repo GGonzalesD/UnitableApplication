@@ -99,6 +99,15 @@
 			  Este campo es obligatorio
 			</mat-error>
 		  </mat-form-field>
+
+		  <section class="example-section">
+			<mat-checkbox name="number" class="example-margin" [(ngModel)]="checked" (click)="openTerms()" #tipou="ngModel" required>
+				¿Estas deacuerdo con los términos y condiciones?
+			</mat-checkbox>
+			<mat-error *ngIf="tipou.hasError('required')">
+				Este campo es obligatorio
+			</mat-error>
+		  </section>
   
 		  <button mat-raised-button color="primary" class="mt-5 w-100" [disabled]="signupForm.invalid">
 			Registrar

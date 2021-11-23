@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AuthService } from '../shared/auth.service';
 import { Signup } from '../shared/signup.model';
+import { TermsComponent } from '../terms/terms.component';
 
 @Component({
   selector: 'app-signup',
@@ -10,12 +12,14 @@ import { Signup } from '../shared/signup.model';
 })
 export class SignupComponent implements OnInit {
 
-  public signup: Signup=new Signup();
+  public signup: Signup = new Signup();
   public invalid: boolean = true;
+  public checked: boolean = false;
   
   constructor(
     private router:Router,
-    private authService:AuthService
+    private authService:AuthService,
+    public dialog: MatDialog
     ) { }
 
   ngOnInit(): void {
@@ -27,6 +31,12 @@ export class SignupComponent implements OnInit {
     }, (error)=>{
       this.invalid = true;
     });
+  }
+
+  openTerms(){
+    if(!this.checked){
+      const dialogRef = this.dialog.open(TermsComponent);
+    }
   }
 
 }
