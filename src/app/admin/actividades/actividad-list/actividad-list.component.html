@@ -3,7 +3,7 @@
         <label class="text-left bold">
             Lista de Actividades
         </label>
-        <button class="margin" mat-raised-button color="primary" mat-button (click)="openDialog()">
+        <button class="margin" mat-raised-button color="primary" mat-button routerLink='/admin/actividades/nuevo'>
             Nueva Actividad
         </button>
     </div>
@@ -34,8 +34,11 @@
         </mat-expansion-panel>
     </div>
 
-
-
+    <div *ngIf = "(actividades | json) == '[]'">
+        <label class="text-left" style="margin: 20px;">
+            No tienes actividades, agrega alguna actividad.
+        </label>
+    </div>
 
 </div>    
 
