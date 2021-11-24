@@ -1,11 +1,17 @@
-<div class="container mt-5" style="min-width: 500px;">
+<div class="d-flex flex-row" style="margin: 20px;">
+    <button mat-raised-button color="primary" type="button" routerLink = "/admin/actividades">
+		<mat-icon>keyboard_backspace</mat-icon>
+	</button>
+</div>
+
+<div class="container mt-5" style="max-width: 400px;">
     <h1 class="fw-bold row justify-content-center"> 
         Editar Actividad
     </h1>
 
     <div class="row justify-content-center">
         <div>
-            <form (ngSubmit)="editActividad()" #loginForm="ngForm">
+            <form #loginForm="ngForm">
                 <div>
                     <mat-form-field appearance="outline" class="d-block">
                         <mat-label>Nombre</mat-label>
@@ -68,10 +74,10 @@
                     </mat-form-field>
             
                     <div class="d-flex justify-content-around">
-                        <button mat-raised-button type="button" color="primary" class="mt-5" style="width: 35%;" mat-dialog-close>
+                        <button mat-raised-button type="button" color="primary" class="mt-5" style="width: 35%;" routerLink = "/admin/actividades">
                             Cancelar
                         </button>
-                        <button mat-raised-button type="submit" color="primary" class="mt-5" style="width: 35%;" mat-dialog-close [disabled]="loginForm.invalid">
+                        <button mat-raised-button type="submit" color="primary" class="mt-5" style="width: 35%;" (click)="editActividad()" routerLink = "/admin/actividades" [disabled]="loginForm.invalid">
                             Guardar
                         </button>
                     </div>

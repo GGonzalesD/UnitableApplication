@@ -13,13 +13,15 @@ export class EditActividadComponent implements OnInit {
 
   public invalid: boolean = true;
   editid:number
-  actividad:ActividadReq
+  actividad={
+    nombre:"",
+    detalles:"",
+    fecha_ini: new Date("2021-11-07T16:00:00.000+00:00"),
+    fecha_fin: new Date("2021-11-20T16:00:00.000+00:00")
+  }
 
-  constructor(private actividadService:ActividadService, 
-    private router:Router, 
-    @Inject(MAT_DIALOG_DATA) public data:any) {
-      this.actividad=this.data.actividad;
-      this.editid=this.data.id;
+  constructor(private actividadService:ActividadService, private router:Router) {
+      this.editid = Number.parseInt(this.router.url.split("/")[3]);
      }
 
   ngOnInit(): void {
