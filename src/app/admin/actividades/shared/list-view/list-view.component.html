@@ -1,0 +1,18 @@
+<div class="list-view-container">
+	<mat-card-title>Actividades Creadas</mat-card-title>
+	<table *ngIf="actividades">
+		<tr *ngFor="let actividad of actividades">
+			<mat-card>
+				<p>
+					{{actividad.nombre}}
+				</p>
+				<p>
+					{{actividad.fecha_ini}}
+				</p>
+				<p>
+					{{actividad.fecha_fin}}
+				</p>
+			</mat-card>
+		</tr>
+	</table>	
+</div>
