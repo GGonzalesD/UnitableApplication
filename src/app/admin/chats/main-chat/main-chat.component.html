@@ -1,8 +1,16 @@
+<div class="d-flex flex-row" style="margin: 20px;">
+    <button mat-raised-button color="primary" type="button" routerLink = "/admin/groups">
+		<mat-icon>keyboard_backspace</mat-icon>
+	</button>
+</div>
+
 <div class="container mt-5">
 	<table *ngIf="chat" class="cart-message-container">
 		<tr *ngFor="let message of chat.mensajes.reverse().slice(0,6).reverse()">
 			<mat-card [class]="message.usuario_id==usuario.id ? 'mat-card-message-user' : 'mat-card-message-other'">
-				<mat-card-title>{{message.mensaje}}</mat-card-title>
+				<p>
+					{{message.mensaje}}
+				</p>
 				<mat-card-subtitle>{{message.hora_mensaje}}</mat-card-subtitle>
 			</mat-card>
 		</tr>

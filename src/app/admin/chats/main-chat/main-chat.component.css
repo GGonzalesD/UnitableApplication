@@ -11,3 +11,16 @@
 .cart-message-container{
 	width: 100%;
 }
+
+mat-card{
+	padding: 10px;
+}
+
+mat-card p{
+	margin: 0;
+}
+
+mat-card mat-card-subtitle{
+	padding: 3px;
+	font-size: small;
+}
