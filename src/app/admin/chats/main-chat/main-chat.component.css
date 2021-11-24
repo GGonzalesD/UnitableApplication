@@ -1,0 +1,13 @@
+
+.mat-card-message-user{
+	color: white;
+	background: rgb(140, 140, 255);
+	float: right;
+}
+.mat-card-message-other{
+	float: left;
+}
+
+.cart-message-container{
+	width: 100%;
+}
