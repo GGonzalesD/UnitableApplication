@@ -1,3 +1,15 @@
 mat-form-field {
 	margin-right: 12px;
 }
+
+.message-box{
+	width: calc(100% - 100px);
+	float: left;
+	display: block;
+}
+
+.message-button{
+	width: 50px;
+	float: right;
+	display: block;
+}

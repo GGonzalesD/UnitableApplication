@@ -57,7 +57,7 @@ export class ListGroupComponent implements OnInit {
   join(id: number, chatId: number) {
     this.groupService.join(id)
     .subscribe(() => {
-      this.router.navigate([`admin/chats/${id}`]);
+      this.router.navigate([`admin/chats/${chatId}`]);
     })
   }
 

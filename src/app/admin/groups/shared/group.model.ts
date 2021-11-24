@@ -21,6 +21,7 @@ export class Group {
 	fecha_fin: null|Date;
 	chat: Chat;
 	curso: Curso;
+	usuario_grupo: boolean;
 }
 
 export class GroupRequest {
