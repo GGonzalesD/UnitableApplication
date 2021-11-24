@@ -4,19 +4,44 @@
 	</button>
 </div>
 
-<div class="container mt-5">
+<div class="main-chat-users">
+	<h2>Miembros del grupo</h2>
 	<table *ngIf="chat" class="cart-message-container">
-		<tr *ngFor="let message of chat.mensajes.reverse().slice(0,6).reverse()">
-			<mat-card [class]="message.usuario_id==usuario.id ? 'mat-card-message-user' : 'mat-card-message-other'">
-				<p>
-					{{message.mensaje}}
-				</p>
-				<mat-card-subtitle>{{message.hora_mensaje}}</mat-card-subtitle>
+		<div *ngFor="let usuario of chat.usuarios">
+			<mat-card>				
+				<mat-card-title>
+					<div *ngIf="usuario.isPremium">
+						<mat-label><mat-icon>stars</mat-icon>Premium</mat-label>
+					</div>
+					<mat-label>
+						{{usuario.nombres}}
+					</mat-label>
+				</mat-card-title>
+
+				<mat-label>
+					{{usuario.nombres}} {{usuario.apellidos}}
+				</mat-label>
 			</mat-card>
-		</tr>
+			<br>
+		</div>
 	</table>
 </div>
 
-<div>
-	<app-form-message *ngIf="chat" (onSend)="sendMessage($event)"></app-form-message>
+<div class="main-chat-messages">
+	<div class="container mt-5">
+		<table *ngIf="chat" class="cart-message-container">
+			<tr *ngFor="let message of chat.mensajes.reverse().slice(0,6).reverse()">
+				<mat-card [class]="message.usuario_id==usuario.id ? 'mat-card-message-user' : 'mat-card-message-other'">
+					<p>
+						{{message.mensaje}}
+					</p>
+					<mat-card-subtitle>{{message.usuario_name}} - {{message.hora_mensaje}}</mat-card-subtitle>
+				</mat-card>
+			</tr>
+		</table>
+	</div>
+	<div>
+		<app-form-message *ngIf="chat" (onSend)="sendMessage($event)"></app-form-message>
+	</div>
+	
 </div>

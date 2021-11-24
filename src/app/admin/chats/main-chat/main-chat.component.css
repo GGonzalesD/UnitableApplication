@@ -24,3 +24,17 @@ mat-card mat-card-subtitle{
 	padding: 3px;
 	font-size: small;
 }
+
+.main-chat-messages{
+	width: calc(100% - 400px);
+	padding-right: 50px;
+	padding-left: 50px;
+	display: block;
+	float: left;
+}
+.main-chat-users{
+	width: 400px;
+	height: 100%;
+	display: block;
+	float: right;
+}
