@@ -1,0 +1,8 @@
+<h3 class="fw-bold">Reporte de actividad del chat</h3>
+
+<button mat-button color="primary" (click)="changeGra('line')">Lineal</button>
+<button mat-button color="primary" (click)="changeGra('bar')">Barras</button>
+
+<div [hidden]="!chart">
+	<canvas id="canvas">{{ chart }}</canvas>
+</div>

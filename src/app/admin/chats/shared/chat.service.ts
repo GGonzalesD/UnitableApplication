@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { ReportOrderDto } from './chat.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,10 @@ export class ChatService {
 
   get(id:string){
     return this.http.get(`${this.apiBase}/chats/${id}`);
+  }
+
+  getReport(id:string){
+    return this.http.get<ReportOrderDto[]>(`${this.apiBase}/mensajes/report/${id}`);
   }
 
   sendMessage(chatId:number, message:string){

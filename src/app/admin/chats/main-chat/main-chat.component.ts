@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SessionUser } from 'src/app/auth/shared/session-user';
 import { UserStorageService } from 'src/app/auth/shared/user-storage.service';
+import { RmessageComponent } from '../report/rmessage/rmessage.component';
 import { Chat } from '../shared/chat.model';
 import { ChatService } from '../shared/chat.service';
 
@@ -19,7 +21,8 @@ export class MainChatComponent implements OnInit {
   constructor(private chatService:ChatService,
     private route:ActivatedRoute,
     private router:Router,
-    private userStorageService:UserStorageService
+    private userStorageService:UserStorageService,
+    private dialog: MatDialog
     ) { }
 
   ngOnInit(): void {
@@ -31,6 +34,11 @@ export class MainChatComponent implements OnInit {
         console.log(data);
       });
     }
+  }
+
+  openEstadisticas(){
+    const dialogRef = this.dialog.open(RmessageComponent, {data: this.id});
+    //const dialogRef = this.dialog.open(RmessageComponent, {chatId:Number.parseInt(this.id)});
   }
 
   sendMessage(e:any){

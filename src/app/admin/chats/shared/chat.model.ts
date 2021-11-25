@@ -7,6 +7,11 @@ export class Chat {
 	usuarios: Usuario[];
 }
 
+export class ReportOrderDto{
+	dateCreate: string;
+	quatity: number;
+}
+
 export class Message {
 	id: number;
 	chat_id: number;

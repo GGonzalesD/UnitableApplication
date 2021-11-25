@@ -19,6 +19,7 @@ import { EditUsuarioComponent } from './usuarios/edit-usuario/edit-usuario.compo
 import { MainChatComponent } from './chats/main-chat/main-chat.component';
 import { FormMessageComponent } from './chats/form-message/form-message.component';
 import { ListViewComponent } from './actividades/shared/list-view/list-view.component';
+import { RmessageComponent } from './chats/report/rmessage/rmessage.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { ListViewComponent } from './actividades/shared/list-view/list-view.comp
          MainChatComponent,
          FormMessageComponent,
          ListViewComponent,
+         RmessageComponent,
           
   ],
   imports: [
